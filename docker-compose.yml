@@ -29,7 +29,7 @@ services:
       ENABLE_ORTHANC_FOR_API: "true"
 
   orthanc:
-    image: orthancteam/orthanc:24.8.1-full
+    image: orthancteam/orthanc:24.9.1-full
     volumes:
       - orthanc-storage:/var/lib/orthanc/db
       - /home/holyfire/finalsetup/custom.css:/home/custom/custom.css
@@ -75,7 +75,7 @@ services:
           "LuaHeartBeatPeriod" : 0,
           "LuaScripts" : [
           ],
-          "ConcurrentJobs" : 7,
+          "ConcurrentJobs" : 8,
           "JobsEngineThreadsCount" : {
             "ResourceModification": 1
           },
