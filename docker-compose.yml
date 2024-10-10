@@ -220,6 +220,7 @@ services:
               "DefaultShareDuration": 0,
               "EnableApiViewMenu": true,
               "EnableEditLabels": true,
+              "EnableReportQuickbutton": false,
               "StudyListSearchMode": "search-button",
               "StudyListContentIfNoSearch": "empty",
               "ShareDurations": [0, 7, 15, 30, 90, 365],
