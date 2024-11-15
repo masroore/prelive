@@ -19,11 +19,11 @@ therefore, it overrides all other definitions */
     --instance-odd-bg-color: rgb(35, 35, 40);
     --instance-even-bg-color: rgb(30, 30, 35);
     --instance-hover-color:  var(--study-hover-color);
-    --instance-selected-color: rgb(20, 20, 25);
+    --instance-selected-color: rgb(59, 131, 199));
     --instance-details-bg-color: var(--instance-selected-color);
 
     --study-table-header-bg-color: var(--study-even-bg-color);
-    --study-table-filter-bg-color: rgb(60, 60, 59);
+    --study-table-filter-bg-color: rgb(160, 160, 60);
     --study-table-actions-bg-color: var(--study-table-filter-bg-color);
     
     --table-filters-is-searching-color: #fda90d86;

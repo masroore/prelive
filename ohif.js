@@ -15,7 +15,7 @@ window.config = {
     maxNumberOfWebWorkers: 3,
     // below flag is for performance reasons, but it might not work for all servers
     omitQuotationForMultipartRequest: true,
-    showWarningMessageForCrossOrigin: true,
+    showWarningMessageForCrossOrigin: false,
     showCPUFallbackMessage: true,
     showLoadingIndicator: true,
     strictZSpacingForVolumeViewport: true,

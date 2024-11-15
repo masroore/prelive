@@ -29,7 +29,7 @@ services:
       ENABLE_ORTHANC_FOR_API: "true"
 
   orthanc:
-    image: orthancteam/orthanc:24.9.1-full
+    image: orthancteam/orthanc:24.10.1-full
     volumes:
       - orthanc-storage:/var/lib/orthanc/db
       - /home/holyfire/finalsetup/custom.css:/home/custom/custom.css
@@ -115,7 +115,6 @@ services:
           "DicomAlwaysAllowMove" : true,
           "DicomCheckModalityHost" : false,
           "DicomModalities" : {
-            "SANTEPACS" : [ "SANTESRVPG1", "192.168.43.230", 11122],
             "CT-1" : [ "RADIANT", "192.168.43.11", 11112],
             "CT-ROOM2" : [ "efilm", "192.168.43.36", 4006],
             "Dental-x-ray" : [ "DENTALMAIN", "192.168.43.9", 104],
@@ -139,7 +138,7 @@ services:
           "DicomThreadsCount" : 4,
           "OrthancPeers" : {
             "CLOUD_SERVER" : [ "https://www.techxploit.com.ng/" ],
-            "PUBLIC_SERVER" : [ "http://192.168.43.195:8042/" ]
+            "PUBLIC_SERVER" : [ "http://192.168.132.6:8042/" ]
           },
           "OrthancPeersInDatabase" : false,
           "HttpProxy" : "",
@@ -224,7 +223,7 @@ services:
               "StudyListSearchMode": "search-button",
               "StudyListContentIfNoSearch": "empty",
               "ShareDurations": [0, 7, 15, 30, 90, 365],
-              "OhifViewer3PublicRoot": "https://192.168.43.215/ohif/",
+              "OhifViewer3PublicRoot": "https://192.168.132.5/ohif/",
               "ViewersIcons" : {
                 "osimis-web-viewer": "bi bi-eye",
                 "stone-webviewer": "bi bi-eye-fill",
@@ -303,7 +302,7 @@ services:
             },
             "Keycloak" : {
               "Enable": true,
-              "Url": "https://192.168.43.215/keycloak/",
+              "Url": "https://192.168.132.5/keycloak/",
               "Realm": "orthanc",
               "ClientId": "orthanc"
             }
@@ -347,7 +346,7 @@ services:
           },
           "WholeSlideImaging" : {
             "EnableIIIF" : true,
-            "OrthancPublicURL" : "https://192.168.43.215/orthanc/ui/app",
+            "OrthancPublicURL" : "https://192.168.132.5/orthanc/ui/app",
             "ServeMirador" : true,
             "ServeOpenSeadragon" : true,
             "ForcePowersOfTwoScaleFactors" : true
@@ -367,15 +366,15 @@ services:
     environment:
       SECRET_KEY: "change-me-I-am-a-secret-key"
       ENABLE_KEYCLOAK: "true"
-      PUBLIC_ORTHANC_ROOT: "https://192.168.43.215/orthanc/"
-      PUBLIC_LANDING_ROOT: "https://192.168.43.215/orthanc/ui/app/token-landing.html"
+      PUBLIC_ORTHANC_ROOT: "https://192.168.132.5/orthanc/"
+      PUBLIC_LANDING_ROOT: "https://192.168.132.5/orthanc/ui/app/token-landing.html"
       USERS: |
         {
           "share-user": "change-me"
         }
       MEDDREAM_TOKEN_SERVICE_URL: "http://meddream-token-service:8088/v3/generate"
-      PUBLIC_MEDDREAM_ROOT: "https://192.168.43.215/meddream/"
-      PUBLIC_OHIF_ROOT: "https://192.168.43.215/ohif/"
+      PUBLIC_MEDDREAM_ROOT: "https://192.168.132.5/meddream/"
+      PUBLIC_OHIF_ROOT: "https://192.168.132.5/ohif/"
 
   orthanc-db:
     image: postgres:15
@@ -400,8 +399,8 @@ services:
       KC_DB_URL: "jdbc:postgresql://keycloak-db:5432/keycloak"
       KC_DB_USERNAME: "keycloak"
       KC_DB_PASSWORD: "keycloak"
-      KC_HOSTNAME_URL: "https://192.168.43.215/keycloak"
-      KC_HOSTNAME_ADMIN_URL: "https://192.168.43.215/keycloak"
+      KC_HOSTNAME_URL: "https://192.168.132.5/keycloak"
+      KC_HOSTNAME_ADMIN_URL: "https://192.168.132.5/keycloak"
 
   keycloak-db:
     image: postgres:15
