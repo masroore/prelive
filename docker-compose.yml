@@ -65,7 +65,7 @@ services:
       ORTHANC_JSON: |
         {
           "Name": "FMCA MAIN SERVER 1",
-          "StorageCompression" : false,
+          "StorageCompression" : true,
           "MaximumStorageSize" : 0,
           "MaximumPatientCount" : 0,
           "MaximumStorageCacheSize" : 128,
