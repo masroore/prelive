@@ -75,7 +75,7 @@ services:
           "LuaHeartBeatPeriod" : 0,
           "LuaScripts" : [
           ],
-          "ConcurrentJobs" : 8,
+          "ConcurrentJobs" : 10,
           "JobsEngineThreadsCount" : {
             "ResourceModification": 1
           },
