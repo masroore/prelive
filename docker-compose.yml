@@ -29,7 +29,7 @@ services:
       ENABLE_ORTHANC_FOR_API: "true"
 
   orthanc:
-    image: orthancteam/orthanc:24.10.1-full
+    image: orthancteam/orthanc:24.10.3-full
     volumes:
       - orthanc-storage:/var/lib/orthanc/db
       - /home/holyfire/finalsetup/custom.css:/home/custom/custom.css
@@ -137,7 +137,6 @@ services:
           "DicomScuPreferredTransferSyntax" : "1.2.840.10008.1.2.1",
           "DicomThreadsCount" : 4,
           "OrthancPeers" : {
-            "CLOUD_SERVER" : [ "https://www.techxploit.com.ng/" ],
             "PUBLIC_SERVER" : [ "http://192.168.132.6:8042/" ]
           },
           "OrthancPeersInDatabase" : false,
