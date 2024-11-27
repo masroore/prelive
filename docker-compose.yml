@@ -120,7 +120,7 @@ services:
             "Dental-x-ray" : [ "DENTALMAIN", "192.168.43.9", 104],
             "Eye-fundus-Camera" : [ "fmcac3", "192.168.0.184", 11118],
             "Eye-OCT" : [ "fmcac4", "192.168.0.184", 11119],
-            "Echo-machine-1" : [ "fmcac5", "192.168.0.194", 11110],
+            "GE-Echo-machine" : [ "echo1", "192.168.132.18", 1004],
             "Echo-machine-2" : [ "fmcac5", "192.168.0.194", 1100],
             "ECG-Machine" : [ "fmcac6", "192.168.0.64", 11111],
             "Endoscopy-machine" : [ "fmcac7", "192.168.0.140", 11112],
