@@ -40,7 +40,7 @@ window.config = {
               rel: 'noopener noreferrer',
               className: 'text-white',
             },
-            React.createElement('h5', {}, 'FMC ABEOKUTA IMAGE VIEWER')
+            React.createElement('h5', {}, 'FMC ABEOKUTA IMAGE VIEWER1')
           );
         },
       },
