@@ -10,7 +10,7 @@
       "authorized_labels": ["*"]
     },
     "radiographer": {
-      "permissions":["view", "share", "download"],
+      "permissions":["view", "share", "send", "download"],
       "authorized_labels": ["*"]
     },
     "external-role": {
