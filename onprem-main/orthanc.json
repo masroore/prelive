@@ -1,0 +1,299 @@
+
+       {
+          "Name": "FMCA MAIN SERVER 1",
+          "StorageCompression" : false,
+          "MaximumStorageSize" : 0,
+          "MaximumPatientCount" : 0,
+          "MaximumStorageCacheSize" : 128,
+          "MaximumStorageMode" : "Recycle",
+          "HttpServerEnabled" : true,
+          "HttpPort" : 8042,
+          "LuaHeartBeatPeriod" : 0,
+          "LuaScripts" : [
+          ],
+          "plugins" : [
+            "/usr/share/orthanc/plugins"
+          ],
+          "ConcurrentJobs" : 6,
+          "JobsEngineThreadsCount" : {
+            "ResourceModification": 1
+          },
+          "WebDavEnabled" : true,
+          "WebDavDeleteAllowed" : false,
+          "WebDavUploadAllowed" : true,
+          "DicomServerEnabled" : true,
+          "StoneWebViewer": {
+            "DateFormat" : "DD/MM/YYYY",
+            "ShowNotForDiagnosticUsageDisclaimer": false,
+            "ShowInfoPanelAtStartup": "Never"
+          },
+          "OsimisWebViewer1": {
+            "DateFormat" : "DD/MM/YYYY",
+            "ShowNotForDiagnosticUsageDisclaimer": false,
+            "ShowInfoPanelAtStartup": "Never"
+          },
+          "DicomAet" : "SERVERMAIN1",
+          "DicomCheckCalledAet" : true,
+          "DicomPort" : 4242,
+          "DefaultEncoding" : "Latin1",
+          "AcceptedTransferSyntaxes" : [ "1.2.840.10008.1.*" ],
+          "UnknownSopClassAccepted" : false,
+          "DicomScpTimeout" : 30,
+          "SslEnabled" : false,
+          "SslCertificate" : "certificate.pem",
+          "SslMinimumProtocolVersion" : 4,
+          "SslVerifyPeers" : false,
+          "SslTrustedClientCertificates" : "trustedClientCertificates.pem",
+          "DicomTlsEnabled" : false,
+          "DicomTlsRemoteCertificateRequired" : true,
+          "DicomAlwaysAllowEcho" : true,
+          "DicomAlwaysAllowStore" : true,
+          "DicomAlwaysAllowFind" : true,
+          "DicomAlwaysAllowFindWorklist" : true,
+          "DicomAlwaysAllowGet" : true,
+          "DicomAlwaysAllowMove" : true,
+          "DicomCheckModalityHost" : false,
+          "DicomModalities" : {
+            "CT1-WORKSTATION" : [ "ct99", "192.168.132.8", 4006],
+            "AW-WORKSTATION" : [ "aw01", "192.168.132.9", 4006],
+            "CT2-CONSOLE" : [ "efilm", "192.168.132.11", 4006],
+            "MAMMOGRAPHY" : [ "fmcac8", "192.168.0.133", 11113],
+            "FLUROSCOPY" : [ "fluro1", "192.168.132.12", 1005],
+            "US-1" : [ "fmcac9", "192.168.0.187", 1114],
+            "US-2-PHILLIPS" : [ "us1", "192.168.132.17", 104],
+            "GE-ECHO-MACHINE-1" : [ "echo1", "192.168.132.18", 1004],
+            "Echo-machine-2" : [ "fmcac5", "192.168.0.194", 1100],
+            "Dental-x-ray" : [ "DENTALMAIN", "192.168.43.9", 104],
+            "Eye-fundus-Camera" : [ "fmcac3", "192.168.0.184", 11118],
+            "Eye-OCT" : [ "fmcac4", "192.168.0.184", 11119],
+            "ECG-Machine" : [ "fmcac6", "192.168.0.64", 11111],
+            "Endoscopy-machine" : [ "fmcac7", "192.168.0.140", 11112]
+          },
+          "DicomModalitiesInDatabase" : false,
+          "DicomEchoChecksFind" : false,
+          "DicomScuTimeout" : 10,
+          "DicomScuPreferredTransferSyntax" : "1.2.840.10008.1.2.1",
+          "DicomThreadsCount" : 4,
+          "OrthancPeers" : {
+            "EMR" : [ "http://192.168.132.6:8042/" ]
+          },
+          "OrthancPeersInDatabase" : false,
+          "HttpProxy" : "",
+          "HttpVerbose" : false,
+          "HttpTimeout" : 60,
+          "HttpsVerifyPeers" : true,
+          "HttpsCACertificates" : "/etc/ssl/certs/ca-certificates.crt",
+          "UserMetadata" : {
+            // "Sample" : 1024
+          },
+          "UserContentType" : {
+            // "sample" : 1024
+            // "sample2" : [ 1025, "application/pdf" ]
+          },
+          "StableAge" : 60,
+          "StrictAetComparison" : false,
+          "StoreMD5ForAttachments" : true,
+          "LimitFindResults" : 0,
+          "LimitFindInstances" : 0,
+          "LogExportedResources" : false,
+          "KeepAlive" : true,
+          "TcpNoDelay" : true,
+          "HttpThreadsCount" : 50,
+          "StoreDicom" : true,
+          "DicomAssociationCloseDelay" : 5,
+          "QueryRetrieveSize" : 150,
+          "CaseSensitivePN" : false,
+          "LoadPrivateDictionary" : true,
+          "Dictionary" : {
+          },
+          "SynchronousCMove" : true,
+          "JobsHistorySize" : 10,
+          "SaveJobs" : true,
+          "OverwriteInstances" : false,
+          "MediaArchiveSize" : 1,
+          "StorageAccessOnFind" : "Always",
+          "MetricsEnabled" : true,
+          "ExecuteLuaEnabled" : false,
+          "HttpRequestTimeout" : 30,
+          "DefaultPrivateCreator" : "",
+          "StorageCommitmentReportsSize" : 100,
+          "TranscodeDicomProtocol" : true,
+          "BuiltinDecoderTranscoderOrder" : "After",
+          "IngestTranscoding" : "1.2.840.10008.1.2.4.70",
+          "IngestTranscodingOfUncompressed" : true,
+          "IngestTranscodingOfCompressed" : true,
+          "DicomLossyTranscodingQuality" : 90,
+          "SyncStorageArea" : true,
+          "MallocArenaMax" : 5,
+          "DeidentifyLogs" : true,
+          "DeidentifyLogsDicomVersion" : "2021b",
+          "MaximumPduLength" : 16384,
+          "CheckRevisions" : false,
+          "SynchronousZipStream" : true,
+          "ZipLoaderThreads": 0,
+          "Warnings" : {
+            "W001_TagsBeingReadFromStorage": true,
+            "W002_InconsistentDicomTagsInDb": true
+          },
+          "OrthancExplorer2": {
+            "IsDefaultUI": true,
+            "Theme": "dark",
+            "CustomCssPath": "/home/custom/custom.css",
+            "CustomLogoPath": "/home/custom/logo.png",
+            "CustomTitle": "FMCA MAIN PACS",
+            "CustomFavIconPath": "/home/custom/favicon.ico",
+            "UiOptions": {
+              "EnableOpenInMedDreamViewer": true,
+              "EnableOpenInOhifViewer3": true,
+              "EnableOpenInVolView": true,
+              "EnableStudyList": true,
+              "EnableDownloadZip": true,
+              "EnableLinkToLegacyUi": false,
+              "ShowOrthancName": true,
+              "MaxMyJobsHistorySize": 5,
+              "EnableDownloadDicomDir": true,
+              "DateFormat": "dd/MM/yyyy",
+              "EnableDownloadDicomFile": true,
+              "EnableModification": true,
+              "DefaultShareDuration": 0,
+              "EnableApiViewMenu": true,
+              "EnableEditLabels": true,
+              "EnableViewerQuickButton": true,
+              "EnableReportQuickButton": false,
+              "StudyListSearchMode": "search-button",
+              "StudyListContentIfNoSearch": "empty",
+              "MaxStudiesDisplayed": 150,
+              "PageLoadSize": 50,
+              "MaxMyJobsHistorySize": 5,
+              "ShareDurations": [0, 7, 15, 30, 90, 365],
+              "OhifViewer3PublicRoot": "https://192.168.132.5/ohif/",
+              "ViewersIcons" : {
+                "osimis-web-viewer": "bi bi-collection-play",
+                "stone-webviewer": "bi bi-eye-fill",
+                "ohif": "bi bi-grid",
+                "ohif-vr": "bi bi-grid-1x2",
+                "ohif-tmtv": "bi bi-grid-3x3-gap",
+                "ohif-seg": "fa-solid fa-shapes fa-button",
+                "ohif-micro": "fa-solid fa-microscope fa-button",
+                "meddream": "bi bi-columns-gap",
+                "volview": "bi bi-box",
+                "wsi": "fa-solid fa-microscope fa-button"
+              },
+              "UploadReportTags" : [
+                "PatientName",
+                "StudyDescription",
+                "PatientID",
+                "AccessionNumber",
+                "StudyDate"
+              ],
+              "UploadReportMaxTags" : 2,
+              "ViewersOrdering" : [
+                "osimis-web-viewer",
+                "stone-webviewer",
+                "ohif",
+                "ohif-vr",
+                "ohif-tmtv",
+                "ohif-seg",
+                "ohif-micro",
+                "meddream",
+                "volview",
+                "wsi"
+              ],
+              "PatientMainTags" : [
+                "PatientID",
+                "PatientName",
+                "PatientBirthDate",
+                "PatientSex",
+                "OtherPatientIDs"
+              ],
+              "StudyMainTags" : [
+                "StudyDate",
+                "StudyTime",
+                "StudyDescription",
+                "AccessionNumber",
+                "StudyID",
+                "StudyInstanceUID",
+                "RequestingPhysician",
+                "ReferringPhysicianName",
+                "Department",
+                "ReportingDoctor",
+                "InstitutionName"
+              ],
+              "SeriesMainTags" : [
+                "SeriesDate",
+                "SeriesTime",
+                "SeriesDescription",
+                "SeriesNumber",
+                "BodyPartExamined",
+                "ProtocolName",
+                "SeriesInstanceUID"
+              ],
+              "StudyListColumns" : [
+                "PatientBirthDate",
+                "PatientName",
+                "PatientID",
+                "StudyDescription",
+                "StudyDate",
+                "modalities",
+                "AccessionNumber",
+                "seriesAndInstancesCount"
+              ]
+            },
+            "Tokens" : {
+              "InstantLinksValidity": 3600,
+              "ShareType": "ohif-viewer-publication"
+            },
+            "Keycloak" : {
+              "Enable": true,
+              "Url": "https://192.168.132.5/keycloak/",
+              "Realm": "orthanc",
+              "ClientId": "orthanc"
+            }
+          },
+          "AuthenticationEnabled": false,     // because it is handled by the authorization plugin
+          "Authorization": {
+            "WebServiceRootUrl": "http://orthanc-auth-service:8000/",
+            "WebServiceSettingsRolesUrl": "http://orthanc-auth-service:8000/",
+            "WebServiceUsername": "share-user",
+            "WebServicePassword": "change-me",
+            "StandardConfigurations" : [
+              "osimis-web-viewer",
+              "stone-webviewer",
+              "orthanc-explorer-2"
+            ],
+            "CheckedLevel": "studies"
+          },
+          "Housekeeper": {
+            "Enable": true,
+            "GlobalPropertyId": 1025,
+            "Force": false,
+            "ThrottleDelay": 5,
+            "Schedule": {
+              "Monday": ["2-4"],
+              "Tuesday": ["2-4"],
+              "Wednesday": ["2-4"],
+              "Thursday": ["3-5"],
+              "Friday": ["3-5"],
+              "Saturday": ["22-24"],
+              "Sunday": ["22-24"]
+            },
+            "Triggers" : {
+              "StorageCompressionChange": true,
+              "MainDicomTagsChange": true,
+              "IngestTranscodingChange": true,
+              "DicomWebCacheChange": true,
+              "UnnecessaryDicomAsJsonFiles": true
+            }
+          },
+          "WholeSlideImaging" : {
+            "EnableIIIF" : true,
+            "OrthancPublicURL" : "https://192.168.132.5/orthanc/ui/app",
+            "ServeMirador" : true,
+            "ServeOpenSeadragon" : true,
+            "ForcePowersOfTwoScaleFactors" : true
+          },
+          "Tcia" : {
+            "Enable" : true,
+            "path" : "https://192.168.132.5/tcia/app/index.html"
+          }
+       }
