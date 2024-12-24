@@ -1,6 +1,6 @@
 // licensed to techxploit 2023 - 2024 
 //
-// 
+//
 
 window.config = {
     routerBasename: '/ohif',
@@ -40,7 +40,7 @@ window.config = {
               rel: 'noopener noreferrer',
               className: 'text-white',
             },
-            React.createElement('h5', {}, 'FMC ABEOKUTA IMAGE VIEWER1')
+            React.createElement('h5', {}, 'FMC ABEOKUTA IMAGE VIEWER')
           );
         },
       },
@@ -67,12 +67,7 @@ window.config = {
           singlepart: 'bulkdata',
           acceptHeader: [ 'multipart/related; type=application/octet-stream; transfer-syntax=*'],
           bulkDataURI: {
-            enabled: true,
-            relativeResolution: 'studies',
-              // In this scenario, Orthanc is not aware that is being served at http://localhost/orthanc/ so we must tell OHIF to fix
-              // the bulkDataURI
-            startsWith: 'http://localhost/',
-            prefixWith: '/orthanc/',
+            enabled: true
           },
         },
       }
