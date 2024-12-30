@@ -8,8 +8,8 @@ services:
     # if setting ENABLE_HTTPS: "true" env var, uncomment the following 4 lines and comment the line with 'ports: ["80:80"]'
     ports: [ "443:443" ]
     volumes:
-      - ./crt.pem:/etc/nginx/tls/crt.pem
-      - ./key.pem:/etc/nginx/tls/key.pem
+      - ../security/crt.pem:/etc/nginx/tls/crt.pem
+      - ../security/key.pem:/etc/nginx/tls/key.pem
     environment:
       ENABLE_ORTHANC: "true"
       ENABLE_KEYCLOAK: "true"
