@@ -2,11 +2,11 @@ services:
 
   nginx:
     image: orthancteam/orthanc-nginx:24.9.1
-    depends_on: [orthanc, orthanc-auth-service, orthanc-for-api, meddream-viewer, keycloak]
+    depends_on: [ orthanc, orthanc-auth-service, orthanc-for-api, meddream-viewer, keycloak ]
     restart: unless-stopped
-#    ports: ["8080:80"]
-# if setting ENABLE_HTTPS: "true" env var, uncomment the following 4 lines and comment the line with 'ports: ["80:80"]'
-    ports: ["443:443"]
+    #    ports: ["8080:80"]
+    # if setting ENABLE_HTTPS: "true" env var, uncomment the following 4 lines and comment the line with 'ports: ["80:80"]'
+    ports: [ "443:443" ]
     volumes:
       - ./crt.pem:/etc/nginx/tls/crt.pem
       - ./key.pem:/etc/nginx/tls/key.pem
@@ -30,8 +30,8 @@ services:
       - ./images/favicon.ico:/home/custom/favicon.ico
       - ./customupload.lua:/etc/share/orthanc/scripts/customupload.lua
 
-    depends_on: [orthanc-db]
-    ports: ["4242:4242", "8042:8042"]
+    depends_on: [ orthanc-db ]
+    ports: [ "4242:4242", "8042:8042" ]
     restart: unless-stopped
     environment:
       STONE_WEB_VIEWER_PLUGIN_ENABLED: "true"
@@ -60,7 +60,7 @@ services:
 
   orthanc-auth-service:
     image: orthancteam/orthanc-auth-service:24.9.1
-    depends_on: [keycloak, meddream-token-service]
+    depends_on: [ keycloak, meddream-token-service ]
     # permissions can be customized in the permissions.json file
     volumes:
       - ./permissions.jsonc:/orthanc_auth_service/permissions.json
@@ -72,7 +72,7 @@ services:
       PUBLIC_LANDING_ROOT: "https://pacs.mylabctg.com/orthanc/ui/app/token-landing.html"
       USERS: |
         {
-          "share-user": "change-me"
+          "test": "test"
         }
       MEDDREAM_TOKEN_SERVICE_URL: "http://meddream-token-service:8088/v3/generate"
       PUBLIC_MEDDREAM_ROOT: "https://pacs.mylabctg.com/meddream/"
@@ -81,13 +81,13 @@ services:
   orthanc-db:
     image: postgres
     restart: unless-stopped
-    volumes: ["orthanc-db:/var/lib/postgresql/data"]
+    volumes: [ "orthanc-db:/var/lib/postgresql/data" ]
     environment:
       POSTGRES_HOST_AUTH_METHOD: "trust"
 
   keycloak:
     image: orthancteam/orthanc-keycloak:24.7.2
-    depends_on: [keycloak-db]
+    depends_on: [ keycloak-db ]
     restart: unless-stopped
     volumes:
       - ../images/orthanc-bg.png:/opt/keycloak/themes/orthanc/login/resources/img/orthanc-bg.png
@@ -107,7 +107,7 @@ services:
   keycloak-db:
     image: postgres
     restart: unless-stopped
-    volumes: ["keycloak-db:/var/lib/postgresql/data"]
+    volumes: [ "keycloak-db:/var/lib/postgresql/data" ]
     environment:
       POSTGRES_PASSWORD: "keycloak"
       POSTGRES_USER: "keycloak"
@@ -119,11 +119,11 @@ services:
 
   ohif:
     image: orthancteam/ohif-v3:24.9.1
-#  customize ohif configuration applied
+    #  customize ohif configuration applied
     volumes:
       - ./ohif-v3.js:/usr/share/nginx/html/app-config.js
-#      - ./ohif-logo.svg:/usr/share/nginx/html/ohif-logo.svg:ro
-#      - ./ohif-logo-light.svg:/usr/share/nginx/html/ohif-logo-light.svg:ro
+    #      - ./ohif-logo.svg:/usr/share/nginx/html/ohif-logo.svg:ro
+    #      - ./ohif-logo-light.svg:/usr/share/nginx/html/ohif-logo-light.svg:ro
     restart: unless-stopped
 
   meddream-viewer:
@@ -152,7 +152,7 @@ services:
     volumes:
       - orthanc-storage:/var/lib/orthanc/db
       - ./meddream-plugin.py:/scripts/meddream-plugin.py
-    depends_on: [orthanc-db]
+    depends_on: [ orthanc-db ]
     restart: unless-stopped
     environment:
       ORTHANC__NAME: "Orthanc for API"
@@ -171,7 +171,6 @@ services:
             "dicom-web-client-user": "change-me"
           }
         }
-
 
 volumes:
   orthanc-storage:
