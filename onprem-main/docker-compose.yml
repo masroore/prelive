@@ -31,7 +31,7 @@ services:
       - ./customupload.lua:/etc/share/orthanc/scripts/customupload.lua
 
     depends_on: [ orthanc-db ]
-    ports: [ "42421:4242", "80421:8042" ]
+    ports: [ "14242:4242", "18042:8042" ]
     restart: unless-stopped
     environment:
       STONE_WEB_VIEWER_PLUGIN_ENABLED: "true"
