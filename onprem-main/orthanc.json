@@ -53,88 +53,13 @@
   "DicomAlwaysAllowGet": true,
   "DicomAlwaysAllowMove": true,
   "DicomCheckModalityHost": false,
-  "DicomModalities": {
-    "CT1-WORKSTATION": [
-      "ct99",
-      "192.168.132.8",
-      4006
-    ],
-    "AW-WORKSTATION": [
-      "aw01",
-      "192.168.132.9",
-      4006
-    ],
-    "CT2-CONSOLE": [
-      "efilm",
-      "192.168.132.11",
-      4006
-    ],
-    "MAMMOGRAPHY": [
-      "fmcac8",
-      "192.168.0.133",
-      11113
-    ],
-    "FLUROSCOPY": [
-      "fluro1",
-      "192.168.132.12",
-      1005
-    ],
-    "US-1": [
-      "fmcac9",
-      "192.168.0.187",
-      1114
-    ],
-    "US-2-PHILLIPS": [
-      "us1",
-      "192.168.132.17",
-      104
-    ],
-    "GE-ECHO-MACHINE-1": [
-      "echo1",
-      "192.168.132.18",
-      1004
-    ],
-    "Echo-machine-2": [
-      "fmcac5",
-      "192.168.0.194",
-      1100
-    ],
-    "Dental-x-ray": [
-      "DENTALMAIN",
-      "192.168.43.9",
-      104
-    ],
-    "Eye-fundus-Camera": [
-      "fmcac3",
-      "192.168.0.184",
-      11118
-    ],
-    "Eye-OCT": [
-      "fmcac4",
-      "192.168.0.184",
-      11119
-    ],
-    "ECG-Machine": [
-      "fmcac6",
-      "192.168.0.64",
-      11111
-    ],
-    "Endoscopy-machine": [
-      "fmcac7",
-      "192.168.0.140",
-      11112
-    ]
-  },
+  "DicomModalities": {},
   "DicomModalitiesInDatabase": false,
   "DicomEchoChecksFind": false,
   "DicomScuTimeout": 10,
   "DicomScuPreferredTransferSyntax": "1.2.840.10008.1.2.1",
   "DicomThreadsCount": 4,
-  "OrthancPeers": {
-    "EMR": [
-      "http://192.168.132.6:8042/"
-    ]
-  },
+  "OrthancPeers": {},
   "OrthancPeersInDatabase": false,
   "HttpProxy": "",
   "HttpVerbose": false,
@@ -308,7 +233,7 @@
       "ShareType": "ohif-viewer-publication"
     },
     "Keycloak": {
-      "Enable": true,
+      "Enable": false,
       "Url": "https://pacsdev.mylabctg.com/keycloak/",
       "Realm": "orthanc",
       "ClientId": "orthanc"
@@ -318,8 +243,8 @@
   "Authorization": {
     "WebServiceRootUrl": "http://orthanc-auth-service:8000/",
     "WebServiceSettingsRolesUrl": "http://orthanc-auth-service:8000/",
-    "WebServiceUsername": "share-user",
-    "WebServicePassword": "change-me",
+    "WebServiceUsername": "test",
+    "WebServicePassword": "test",
     "StandardConfigurations": [
       "osimis-web-viewer",
       "stone-webviewer",
