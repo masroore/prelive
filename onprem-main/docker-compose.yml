@@ -47,7 +47,7 @@ services:
       CONNECTIVITY_CHECKS_PLUGIN_ENABLED: "true"
       WORKLISTS_PLUGIN_ENABLED: "true"
       TCIA_PLUGIN_ENABLED: "true"
-      ORTHANC__TCIA__URL: "https://pacs.mylabctg.com/orthanc/tcia/app/index.html"
+      ORTHANC__TCIA__URL: "https://pacsdev.mylabctg.com/orthanc/tcia/app/index.html"
       VOLVIEW_PLUGIN_ENABLED: "false"
       ORTHANC__PYTHON_VERBOSE: "true"
       ORTHANC__PYTHON_PLUGIN_ENABLED: "true"
@@ -68,15 +68,15 @@ services:
     environment:
       SECRET_KEY: "change-me-I-am-a-secret-key"
       ENABLE_KEYCLOAK: "true"
-      PUBLIC_ORTHANC_ROOT: "https://pacs.mylabctg.com/orthanc/"
-      PUBLIC_LANDING_ROOT: "https://pacs.mylabctg.com/orthanc/ui/app/token-landing.html"
+      PUBLIC_ORTHANC_ROOT: "https://pacsdev.mylabctg.com/orthanc/"
+      PUBLIC_LANDING_ROOT: "https://pacsdev.mylabctg.com/orthanc/ui/app/token-landing.html"
       USERS: |
         {
           "test": "test"
         }
       MEDDREAM_TOKEN_SERVICE_URL: "http://meddream-token-service:8088/v3/generate"
-      PUBLIC_MEDDREAM_ROOT: "https://pacs.mylabctg.com/meddream/"
-      PUBLIC_OHIF_ROOT: "https://pacs.mylabctg.com/ohif/"
+      PUBLIC_MEDDREAM_ROOT: "https://pacsdev.mylabctg.com/meddream/"
+      PUBLIC_OHIF_ROOT: "https://pacsdev.mylabctg.com/ohif/"
 
   orthanc-db:
     image: postgres
@@ -101,8 +101,8 @@ services:
       KC_DB_URL: "jdbc:postgresql://keycloak-db:5432/keycloak"
       KC_DB_USERNAME: "keycloak"
       KC_DB_PASSWORD: "keycloak"
-      KC_HOSTNAME_URL: "https://pacs.mylabctg.com/keycloak"
-      KC_HOSTNAME_ADMIN_URL: "https://pacs.mylabctg.com/keycloak"
+      KC_HOSTNAME_URL: "https://pacsdev.mylabctg.com/keycloak"
+      KC_HOSTNAME_ADMIN_URL: "https://pacsdev.mylabctg.com/keycloak"
 
   keycloak-db:
     image: postgres
