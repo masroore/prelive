@@ -12,9 +12,9 @@ services:
       - ../security/key.pem:/etc/nginx/tls/key.pem
     environment:
       ENABLE_ORTHANC: "true"
-      ENABLE_KEYCLOAK: "true"
+      #ENABLE_KEYCLOAK: "true"
       ENABLE_OHIF: "true"
-      ENABLE_ORTHANC_TOKEN_SERVICE: "true"
+      #ENABLE_ORTHANC_TOKEN_SERVICE: "true"
       ENABLE_HTTPS: "true"
       ENABLE_MEDDREAM: "true"
       ENABLE_WSI: "true"
@@ -31,7 +31,7 @@ services:
       - ./customupload.lua:/etc/share/orthanc/scripts/customupload.lua
 
     depends_on: [ orthanc-db ]
-    ports: [ "14242:4242", "18042:8042" ]
+    ports: [ "4242:4242", "8042:8042" ]
     restart: unless-stopped
     environment:
       STONE_WEB_VIEWER_PLUGIN_ENABLED: "true"
@@ -135,8 +135,8 @@ services:
       integration: "study"
       TOKEN_SERVICE_ADDRESS: "https://meddream-token-service:8088/v3/validate"
       ORTHANC_BASE_URL: "https://orthanc-for-api:8042"
-      ORTHANC_USER: "meddream-user"
-      ORTHANC_PWD: "change-me"
+      ORTHANC_USER: "test"
+      ORTHANC_PWD: "test"
       ORTHANC_MEDDREAM_PYTHON_PLUGIN_ENABLED: "true"
       MEDDREAM_ADMIN_PASSWORD: "demo"
       MEDDREAM_PACS_CONFIG_TYPE: "Dicomweb"
@@ -166,7 +166,7 @@ services:
       ORTHANC_JSON: |
         {
           "RegisteredUsers": {
-            "meddream-user": "change-me",
+            "test": "test",
             "script-user": "change-me",
             "dicom-web-client-user": "change-me"
           }
