@@ -233,7 +233,7 @@
       "ShareType": "ohif-viewer-publication"
     },
     "Keycloak": {
-      "Enable": false,
+      "Enable": true,
       "Url": "https://pacsdev.mylabctg.com/keycloak/",
       "Realm": "orthanc",
       "ClientId": "orthanc"
