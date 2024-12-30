@@ -1,10 +1,3 @@
-## THIS IS LICENCED UNDER TECHXPLOIT.COM.NG.................
-## ANY MODIFICATION TO THIS FILE REQUIRES APPROVAL.........
-
-## THIS CONFIGURATION IS FOR THE ON GROUND SERVER FOR FMC ABEOKUTA........
-## REFER TO CLOUD FOLDER FOR CLOUD COMPOSE FILES................
-
-
 services:
 
   nginx:
@@ -15,8 +8,8 @@ services:
 # if setting ENABLE_HTTPS: "true" env var, uncomment the following 4 lines and comment the line with 'ports: ["80:80"]'
     ports: ["443:443"]
     volumes:
-      - /home/main/Documents/prelive/sslkeys/crt.pem:/etc/nginx/tls/crt.pem
-      - /home/main/Documents/prelive/sslkeys/key.pem:/etc/nginx/tls/key.pem
+      - ./crt.pem:/etc/nginx/tls/crt.pem
+      - ./key.pem:/etc/nginx/tls/key.pem
     environment:
       ENABLE_ORTHANC: "true"
       ENABLE_KEYCLOAK: "true"
@@ -31,11 +24,11 @@ services:
     image: orthancteam/orthanc:24.10.3-full
     volumes:
       - orthanc-storage:/var/lib/orthanc/db
-      - /home/main/Documents/prelive/orthanc.json:/etc/orthanc/orthanc.json:ro
-      - /home/main/Documents/prelive/custom.css:/home/custom/custom.css
-      - /home/main/Documents/prelive/images/logo.png:/home/custom/logo.png
-      - /home/main/Documents/prelive/images/favicon.ico:/home/custom/favicon.ico
-      - /home/main/Documents/prelive/customupload.lua:/etc/share/orthanc/scripts/customupload.lua
+      - ./orthanc.json:/etc/orthanc/orthanc.json:ro
+      - ./custom.css:/home/custom/custom.css
+      - ./images/logo.png:/home/custom/logo.png
+      - ./images/favicon.ico:/home/custom/favicon.ico
+      - ./customupload.lua:/etc/share/orthanc/scripts/customupload.lua
 
     depends_on: [orthanc-db]
     ports: ["4242:4242", "8042:8042"]
@@ -54,7 +47,7 @@ services:
       CONNECTIVITY_CHECKS_PLUGIN_ENABLED: "true"
       WORKLISTS_PLUGIN_ENABLED: "true"
       TCIA_PLUGIN_ENABLED: "true"
-      ORTHANC__TCIA__URL: "https://192.168.132.5/orthanc/tcia/app/index.html"
+      ORTHANC__TCIA__URL: "https://pacs.mylabctg.com/orthanc/tcia/app/index.html"
       VOLVIEW_PLUGIN_ENABLED: "false"
       ORTHANC__PYTHON_VERBOSE: "true"
       ORTHANC__PYTHON_PLUGIN_ENABLED: "true"
@@ -75,18 +68,18 @@ services:
     environment:
       SECRET_KEY: "change-me-I-am-a-secret-key"
       ENABLE_KEYCLOAK: "true"
-      PUBLIC_ORTHANC_ROOT: "https://192.168.132.5/orthanc/"
-      PUBLIC_LANDING_ROOT: "https://192.168.132.5/orthanc/ui/app/token-landing.html"
+      PUBLIC_ORTHANC_ROOT: "https://pacs.mylabctg.com/orthanc/"
+      PUBLIC_LANDING_ROOT: "https://pacs.mylabctg.com/orthanc/ui/app/token-landing.html"
       USERS: |
         {
           "share-user": "change-me"
         }
       MEDDREAM_TOKEN_SERVICE_URL: "http://meddream-token-service:8088/v3/generate"
-      PUBLIC_MEDDREAM_ROOT: "https://192.168.132.5/meddream/"
-      PUBLIC_OHIF_ROOT: "https://192.168.132.5/ohif/"
+      PUBLIC_MEDDREAM_ROOT: "https://pacs.mylabctg.com/meddream/"
+      PUBLIC_OHIF_ROOT: "https://pacs.mylabctg.com/ohif/"
 
   orthanc-db:
-    image: postgres:15
+    image: postgres
     restart: unless-stopped
     volumes: ["orthanc-db:/var/lib/postgresql/data"]
     environment:
@@ -97,10 +90,10 @@ services:
     depends_on: [keycloak-db]
     restart: unless-stopped
     volumes:
-      - /home/main/Documents/prelive/images/orthanc-bg.png:/opt/keycloak/themes/orthanc/login/resources/img/orthanc-bg.png
-      - /home/main/Documents/prelive/images/orthanc-logo.png:/opt/keycloak/themes/orthanc/login/resources/img/orthanc-logo.png
-      - /home/main/Documents/prelive/images/orthanc-logo-text.png:/opt/keycloak/themes/orthanc/login/resources/img/orthanc-logo-text.png
-      - /home/main/Documents/prelive/images/orthanc-logo-text-shadow.png:/opt/keycloak/themes/orthanc/login/resources/img/orthanc-logo-text-shadow.png
+      - ../images/orthanc-bg.png:/opt/keycloak/themes/orthanc/login/resources/img/orthanc-bg.png
+      - ../images/orthanc-logo.png:/opt/keycloak/themes/orthanc/login/resources/img/orthanc-logo.png
+      - ../images/orthanc-logo-text.png:/opt/keycloak/themes/orthanc/login/resources/img/orthanc-logo-text.png
+      - ../images/orthanc-logo-text-shadow.png:/opt/keycloak/themes/orthanc/login/resources/img/orthanc-logo-text-shadow.png
     environment:
       KEYCLOAK_ADMIN: "admin"
       KEYCLOAK_ADMIN_PASSWORD: "password"
@@ -108,11 +101,11 @@ services:
       KC_DB_URL: "jdbc:postgresql://keycloak-db:5432/keycloak"
       KC_DB_USERNAME: "keycloak"
       KC_DB_PASSWORD: "keycloak"
-      KC_HOSTNAME_URL: "https://192.168.132.5/keycloak"
-      KC_HOSTNAME_ADMIN_URL: "https://192.168.132.5/keycloak"
+      KC_HOSTNAME_URL: "https://pacs.mylabctg.com/keycloak"
+      KC_HOSTNAME_ADMIN_URL: "https://pacs.mylabctg.com/keycloak"
 
   keycloak-db:
-    image: postgres:15
+    image: postgres
     restart: unless-stopped
     volumes: ["keycloak-db:/var/lib/postgresql/data"]
     environment:

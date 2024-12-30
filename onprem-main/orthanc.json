@@ -166,7 +166,7 @@
               "PageLoadSize": 50,
               "MaxMyJobsHistorySize": 5,
               "ShareDurations": [0, 7, 15, 30, 90, 365],
-              "OhifViewer3PublicRoot": "https://192.168.132.5/ohif/",
+              "OhifViewer3PublicRoot": "https://pacs.mylabctg.com/ohif/",
               "ViewersIcons" : {
                 "osimis-web-viewer": "bi bi-collection-play",
                 "stone-webviewer": "bi bi-eye-fill",
@@ -245,7 +245,7 @@
             },
             "Keycloak" : {
               "Enable": true,
-              "Url": "https://192.168.132.5/keycloak/",
+              "Url": "https://pacs.mylabctg.com/keycloak/",
               "Realm": "orthanc",
               "ClientId": "orthanc"
             }
@@ -287,13 +287,13 @@
           },
           "WholeSlideImaging" : {
             "EnableIIIF" : true,
-            "OrthancPublicURL" : "https://192.168.132.5/orthanc/ui/app",
+            "OrthancPublicURL" : "https://pacs.mylabctg.com/orthanc/ui/app",
             "ServeMirador" : true,
             "ServeOpenSeadragon" : true,
             "ForcePowersOfTwoScaleFactors" : true
           },
           "Tcia" : {
             "Enable" : true,
-            "path" : "https://192.168.132.5/tcia/app/index.html"
+            "path" : "https://pacs.mylabctg.com/tcia/app/index.html"
           }
        }
